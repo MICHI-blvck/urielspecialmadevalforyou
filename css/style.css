@@ -778,3 +778,57 @@ canvas {
         bottom: 14px;
     }
 }
+
+/* Mobile: show image first, then text, and improve spacing */
+@media (max-width: 680px) {
+    /* Allow page scrolling on small devices so long content can be seen */
+    body {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Keep the final card constrained to the viewport and enable internal scrolling */
+    .final {
+        max-height: calc(100vh - 88px);
+        width: 96vw;
+    }
+
+    .final-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        overflow-y: auto;
+        max-height: calc(100vh - 160px);
+        padding-right: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .final-image {
+        order: -1;
+        flex: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 6px;
+    }
+
+    .final-image img {
+        width: auto;
+        max-width: 92%;
+        max-height: calc(60vh);
+        object-fit: contain;
+        height: auto;
+        border-radius: 14px;
+        box-shadow: 0 10px 36px rgba(0,0,0,0.18);
+    }
+
+    .final-text {
+        width: 100%;
+        padding: 0 8px 12px;
+        text-align: center;
+    }
+
+    .final .badge {
+        margin-top: 6px;
+    }
+}
